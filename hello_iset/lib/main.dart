@@ -56,7 +56,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  void _decrementCounter(){
+    setState(() {
+      _counter==0?_counter=0:_counter--;
+    });
+  }
+  void _resetCounter(){
+    setState(() {
+      _counter=0;
+    });
+  }
   void _incrementCounter() {
     setState(() {
       //indique a flutter qu'une donnée de l'interface a changé
@@ -108,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            const Text('You have pushed the button this many times:'),
+            const Text('bouton:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -116,10 +125,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(onPressed: _decrementCounter,heroTag: 'dec',child: const Icon(Icons.remove),),
+          const SizedBox(width:10),
+          FloatingActionButton(onPressed: _resetCounter,heroTag: 'reset',child: const Icon(Icons.refresh),),
+          const SizedBox(width: 10),
+          FloatingActionButton(onPressed: _incrementCounter,heroTag: 'inc',child: const Icon(Icons.add),)
+        ],
       ),
     );
   }
