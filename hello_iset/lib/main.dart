@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() {//la premiere fonciton executée
+  runApp(const MyApp());//lance l'application flutter et lance le widget MyApp
 }
 
 class MyApp extends StatelessWidget {
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //permet la configuration de l'application
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -58,6 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      //indique a flutter qu'une donnée de l'interface a changé
+
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
@@ -76,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      //fournit la structure de page 
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
