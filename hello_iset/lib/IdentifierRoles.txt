@@ -1,0 +1,4 @@
+lib: contient le code dart de l'application
+android: contient les fichier necessaire pour android
+web : contient les fichiers necessaire pour executer flutter su le web 
+pubspec.yaml : contient configurations principal du projet comme le nom, version et les dependances
